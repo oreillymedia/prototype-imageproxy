@@ -1,0 +1,5 @@
+{
+	"ImportPath": "github.com/oreillymedia/prototype-imageproxy",
+	"GoVersion": "go1.4.2",
+	"Deps": []
+}

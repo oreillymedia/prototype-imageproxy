@@ -48,6 +48,8 @@ func main() {
 		}
 	}
 
+	p.ScaleUp = true
+
 	server := &http.Server{
 		Addr:    addr,
 		Handler: p,

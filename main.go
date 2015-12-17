@@ -13,7 +13,6 @@ import (
 	"github.com/peterbourgon/diskv"
 
 	"github.com/zischwartz/imageproxy"
-	// "willnorris.com/go/imageproxy"
 )
 
 func main() {

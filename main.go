@@ -12,7 +12,8 @@ import (
 	"github.com/gregjones/httpcache/diskcache"
 	"github.com/peterbourgon/diskv"
 
-	"willnorris.com/go/imageproxy"
+	"github.com/zischwartz/imageproxy"
+	// "willnorris.com/go/imageproxy"
 )
 
 func main() {

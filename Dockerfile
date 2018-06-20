@@ -1,4 +1,4 @@
-FROM golang:1.5.2
+FROM golang:1.10.3
 
 ADD . /go/src/github.com/oreillymedia/prototype-imageproxy
 

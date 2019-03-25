@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "zischwartz/prototype-imageproxy",
+    "Name": "oreillymedia/prototype-imageproxy",
     "Update": "true"
   },
   "Ports": [

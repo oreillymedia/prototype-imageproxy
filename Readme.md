@@ -5,9 +5,9 @@ For deploying to Elastic Beanstalk (EB)
 ```
 dvm use 17.12.1-ce # what EB is on at time of writing
 
-docker build -t zischwartz/prototype-imageproxy .
-docker push zischwartz/prototype-imageproxy
-zip ok.zip Dockerrun.aws.json
+docker build -t oreillymedia/prototype-imageproxy .
+docker push oreillymedia/prototype-imageproxy
+zip prototype-imageproxy.zip Dockerrun.aws.json
 ```
 
 And then take the resulting zip file and put it on EB where it says Update and Deploy

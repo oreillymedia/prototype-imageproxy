@@ -36,7 +36,7 @@ func main() {
 
 	// Create whitelist
 	if os.Getenv("WHITELIST") != "" {
-		p.Whitelist = strings.Split(os.Getenv("WHITELIST"), ",")
+		p.AllowHosts = strings.Split(os.Getenv("WHITELIST"), ",")
 	}
 
 	// Create baseurl

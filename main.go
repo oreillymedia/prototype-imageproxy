@@ -48,7 +48,7 @@ func main() {
 			log.Fatalf("error parsing baseURL: %v", err)
 		}
 		p.DefaultBaseURL = base
-		p.AllowHosts = []string{base.String()}
+		p.AllowHosts = []string{base.Host}
 	}
 
 	p.ScaleUp = true

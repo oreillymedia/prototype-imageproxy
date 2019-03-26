@@ -43,13 +43,12 @@ func main() {
 
 	// Create baseurl
 	if os.Getenv("BASEURL") != "" {
-		var err error
-		base, err = url.Parse(os.Getenv("BASEURL"))
+		base, err := url.Parse(os.Getenv("BASEURL"))
 		if err != nil {
 			log.Fatalf("error parsing baseURL: %v", err)
 		}
 		p.DefaultBaseURL = base
-		p.AllowHosts = base
+		p.AllowHosts = []string{base.String()}
 	}
 
 	p.ScaleUp = true

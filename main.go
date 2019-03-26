@@ -28,6 +28,8 @@ func main() {
 	d := diskv.New(diskv.Options{
 		BasePath:     "/tmp/imageproxy",
 		CacheSizeMax: 500 * 1024 * 1024,
+		// For file "c0ffee", store file as "c0/ff/c0ffee"
+		Transform: func(s string) []string { return []string{s[0:2], s[2:4]} },
 	})
 	cache = diskcache.NewWithDiskv(d)
 
@@ -36,16 +38,17 @@ func main() {
 
 	// Create whitelist
 	if os.Getenv("WHITELIST") != "" {
-		p.AllowHosts = strings.Split(os.Getenv("WHITELIST"), ",")
+		p.Referrers = strings.Split(os.Getenv("WHITELIST"), ",")
 	}
 
 	// Create baseurl
 	if os.Getenv("BASEURL") != "" {
-		var err error
-		p.DefaultBaseURL, err = url.Parse(os.Getenv("BASEURL"))
+		base, err := url.Parse(os.Getenv("BASEURL"))
 		if err != nil {
 			log.Fatalf("error parsing baseURL: %v", err)
 		}
+		p.DefaultBaseURL = base
+		p.AllowHosts = []string{base.String()}
 	}
 
 	p.ScaleUp = true
